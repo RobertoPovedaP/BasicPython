@@ -11,7 +11,13 @@ def add_task(id_task, description):
     tasks[id_task]={"description": description, "complete": False}
     pprint(f"Tarea '{description}' agregada con éxito")
 
-
+#Función para marcar tarea como completada
+def complete_task(id_task):
+    if id_task in tasks:
+        tasks[id_task]["complete"]=True
+        print(f"Tarea '{tasks[id_task]['description']}' marcada como completada.")
+    else:
+        print(f"Tarea con ID {id_task} no encontrada.")
 
 def menu():
     # Función principal para el menú
