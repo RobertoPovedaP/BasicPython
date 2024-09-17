@@ -47,7 +47,7 @@ def menu():
         print("\n 4. Listar todas las tareas")
         print("\n 5. Salir")
 
-        option = input("Seleccione una opción: ")
+        option=input("Seleccione una opción: ")
 
         if option=="1":
             id_task=input("Ingrese un ID de la tarea")
