@@ -9,7 +9,7 @@ tasks={}
 #Funcion para agregar tareas
 def add_task(id_task, description):
     tasks[id_task]={"description": description, "complete": False}
-    pprint(f"Tarea '{description}' agregada con éxito")
+    print(f"Tarea '{description}' agregada con éxito")
 
 #Función para marcar tarea como completada
 def complete_task(id_task):
@@ -59,9 +59,9 @@ def menu():
         elif option=="3":
             id_task=input("\n Ingresa el ID de la tarea a eliminar: ")
             delete_task(id_task)
-        elif opcion == "4":
+        elif option == "4":
             listar_tareas()
-        elif opcion == "5":
+        elif option == "5":
             print("\n Saliendo del gestor de tareas.")
             break
         else:
