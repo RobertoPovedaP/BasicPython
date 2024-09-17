@@ -39,7 +39,7 @@ def listar_tareas():
 
 def menu():
     # Función principal para el menú
-    while true:
+    while True:
         print("\n--- Menú de Lista de Tareas ---")
         print("\n 1. Agregar tarea")
         print("\n 2. Marcar tarea como completada")
