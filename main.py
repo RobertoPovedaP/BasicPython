@@ -19,6 +19,15 @@ def complete_task(id_task):
     else:
         print(f"Tarea con ID {id_task} no encontrada.")
 
+#Función para eliminar una tarea
+def delete_task(id_task):
+    if id_task in tasks:
+        description=tasks[id_task]['description']
+        del tasks[id_task]
+        print(f"Tarea '{description}' eliminada.")
+    else:
+        print(f"Tarea con ID {id_task} no existe")
+
 def menu():
     # Función principal para el menú
     while true:
@@ -35,6 +44,9 @@ def menu():
         elif option=="2":
             id_task=input("Ingrese el ID de la tarea a completar")
             complete_task(id_task)
+        elif option=="3":
+            id_task=input("\n Ingresa el ID de la tarea a eliminar: ")
+            delete_task(id_task)
         else:
             print("\n Opción no válida")
 
