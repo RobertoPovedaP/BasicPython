@@ -27,6 +27,15 @@ def delete_task(id_task):
         print(f"Tarea '{description}' eliminada.")
     else:
         print(f"Tarea con ID {id_task} no existe")
+#Funcion para listar las tareas
+def listar_tareas():
+    if not tasks:
+        print("No hay tareas en la lista")
+    else:
+        print("\nLista de tareas:")
+        for id_task, detalles in tasks.items():
+            estado="Complete" if detalles["complete"] else "Pendiente"
+            print(f"{id_task}: {detalles['description']} - {estado}")
 
 def menu():
     # Función principal para el menú
@@ -34,6 +43,9 @@ def menu():
         print("\n--- Menú de Lista de Tareas ---")
         print("\n 1. Agregar tarea")
         print("\n 2. Marcar tarea como completada")
+        print("\n 3. Eliminar tarea")
+        print("\n 4. Listar todas las tareas")
+        print("\n 5. Salir")
 
         option = input("Seleccione una opción: ")
 
@@ -47,6 +59,11 @@ def menu():
         elif option=="3":
             id_task=input("\n Ingresa el ID de la tarea a eliminar: ")
             delete_task(id_task)
+        elif opcion == "4":
+            listar_tareas()
+        elif opcion == "5":
+            print("\n Saliendo del gestor de tareas.")
+            break
         else:
             print("\n Opción no válida")
 
